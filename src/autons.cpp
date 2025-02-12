@@ -418,3 +418,8 @@ void full_stake_B() {
   pros::delay(100);
   Intake.brake();
 }
+
+// Skills Auton
+void skills() {
+  chassis.pid_drive_set(-18_in, 100);
+}
