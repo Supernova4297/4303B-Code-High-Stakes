@@ -1,3 +1,4 @@
+#include <cstdint> // IWYU pragma: keep
 #include "main.h" // IWYU pragma: keep
 #include "pros/rtos.hpp"
 #include "subsystems.hpp"
@@ -421,5 +422,31 @@ void full_stake_B() {
 
 // Skills Auton
 void skills() {
-  chassis.pid_drive_set(-18_in, 100);
+  // 1st Goal Fill
+  chassis.pid_drive_set(-12_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  Intake.move(127);
+  pros::delay(10);
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(90_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(0_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(135_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(16.97_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(120_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
 }
