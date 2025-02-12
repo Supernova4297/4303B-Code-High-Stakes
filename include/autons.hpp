@@ -19,3 +19,4 @@ void odom_boomerang_injected_pure_pursuit_example();
 void measure_offsets();
 void full_stake();
 void full_stake_B();
+void skills();
