@@ -1,4 +1,3 @@
-#include <cstdint> // IWYU pragma: keep
 #include "main.h" // IWYU pragma: keep
 #include "pros/rtos.hpp"
 #include "subsystems.hpp"
@@ -487,4 +486,32 @@ void skills() {
   chassis.pid_drive_set(-26.8_in, 100);
   chassis.pid_wait();
   Clamp.set_value(0);
+  // 3rd Corner Place
+  Intake.brake();
+  chassis.pid_drive_set(26.8_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(0_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-48_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-21.8_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(64.62_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  chassis.pid_drive_set(36_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-135_deg, 100);
+  chassis.pid_wait();
+  Doinker.set_value(1);
+  chassis.pid_drive_set(32.44_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(45_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(1.5_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+  
 }
