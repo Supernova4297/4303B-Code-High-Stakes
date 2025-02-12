@@ -86,6 +86,7 @@ void initialize() {
   // Initialize chassis and auton selector
   chassis.drive_imu_calibrate(false);
   chassis.drive_sensor_reset();
+  chassis.slew_drive_set(true);
   //ez::as::initialize();
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
 }
