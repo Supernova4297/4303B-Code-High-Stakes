@@ -448,7 +448,13 @@ void skills() {
   chassis.pid_wait();
   chassis.pid_turn_set(-120_deg, 100);
   chassis.pid_wait();
-  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_drive_set(-24_in, 100);
   chassis.pid_wait();
   Clamp.set_value(0);
+  pros::delay(10);
+  // 2nd Goal Fill
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-90_deg, 100);
+  
 }
