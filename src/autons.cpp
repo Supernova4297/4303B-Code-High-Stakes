@@ -466,6 +466,7 @@ void skills() {
   chassis.pid_turn_set(-90_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
   chassis.pid_turn_set(-153.435_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(26.8_in, 100);
@@ -481,11 +482,13 @@ void skills() {
   chassis.pid_turn_set(180_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
   chassis.pid_turn_set(153.435_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(-26.8_in, 100);
   chassis.pid_wait();
   Clamp.set_value(0);
+  pros::delay(10);
   // 3rd Corner Place
   Intake.brake();
   chassis.pid_drive_set(26.8_in, 100);
@@ -513,5 +516,48 @@ void skills() {
   chassis.pid_drive_set(1.5_in, 100);
   chassis.pid_wait();
   Clamp.set_value(0);
-  
+  pros::delay(10);
+  // Last Goal
+  Intake.move(127);
+  chassis.pid_drive_set(32.44_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-90_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(48_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  chassis.pid_turn_set(45_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(32.44_in,100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(90_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(21.8_deg,100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(64.62_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(36_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-90_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(153.435_deg, 100);
+  Doinker.set_value(1);
+  chassis.pid_wait();
+  chassis.pid_drive_set(25.3_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-153.435_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-1.5_in, 100);
+  Clamp.set_value(0);
+  pros::delay(10);
 }
