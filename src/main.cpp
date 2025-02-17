@@ -294,9 +294,13 @@ void opcontrol() {
       LadyBrown.move(127);
     } else if ((master.get_digital(DIGITAL_L2))){
       LadyBrown.move(-127);
+    } else if ((master.get_digital_new_press(DIGITAL_UP))){
+      LadyBrown.move_absolute(194.7122, 127);
+    } else if ((master.get_digital_new_press(DIGITAL_DOWN))) {
+      LadyBrown.move_absolute(0, 127);
     } else {
       LadyBrown.brake();
-    }
+    } 
     // . . .
 
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
