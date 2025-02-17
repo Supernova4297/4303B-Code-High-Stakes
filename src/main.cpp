@@ -295,7 +295,7 @@ void opcontrol() {
     // Lady Brown
     if ((master.get_digital(DIGITAL_L1))){
       LadyBrown.move(-127);
-    } else if ((master.get_digital(DIGITAL_L2))&&(LadyBrown.get_position()<331.9568427)){
+    } else if ((master.get_digital(DIGITAL_L2))&&(LadyBrown.get_position()<1693.3118)){
       LadyBrown.move(127);
     } else if ((master.get_digital(DIGITAL_UP))){
       LadyBrown.move_absolute(194.7122*2, 127);
