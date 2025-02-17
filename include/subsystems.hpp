@@ -16,7 +16,7 @@ inline pros::Motor IntakeA(-20);
 inline pros::Motor IntakeSmall(-13);
 // LB Code
 // 5.5 W Config
-inline pros::Motor LadyBrown(2);
+inline pros::Motor LadyBrown(-2);
 /*
 pros::Motor LB1 (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LB2 (13, pros::E_MOTOR_GEARSET_18, true, pros::E_MOTOR_ENCODER_DEGREES);*/
