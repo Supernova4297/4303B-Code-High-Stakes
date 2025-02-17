@@ -2,6 +2,7 @@
 #include "EZ-Template/util.hpp"
 #include "autons.hpp"
 #include "pros/misc.h"
+#include "pros/rtos.hpp"
 #include "subsystems.hpp"
 
 /////
@@ -294,9 +295,9 @@ void opcontrol() {
       LadyBrown.move(127);
     } else if ((master.get_digital(DIGITAL_L2))){
       LadyBrown.move(-127);
-    } else if ((master.get_digital_new_press(DIGITAL_UP))){
+    } else if ((master.get_digital(DIGITAL_UP))){
       LadyBrown.move_absolute(194.7122, 127);
-    } else if ((master.get_digital_new_press(DIGITAL_DOWN))) {
+    } else if ((master.get_digital(DIGITAL_DOWN))) {
       LadyBrown.move_absolute(0, 127);
     } else {
       LadyBrown.brake();
