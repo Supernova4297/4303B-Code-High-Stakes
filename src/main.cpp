@@ -2,6 +2,7 @@
 #include "EZ-Template/util.hpp"
 #include "autons.hpp"
 #include "pros/misc.h"
+#include "pros/motors.h"
 #include "pros/rtos.hpp"
 #include "subsystems.hpp"
 
@@ -90,6 +91,7 @@ void initialize() {
   chassis.slew_drive_set(true);
   //ez::as::initialize();
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
+  LadyBrown.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 }
 
 /**
@@ -296,7 +298,7 @@ void opcontrol() {
     } else if ((master.get_digital(DIGITAL_L2))){
       LadyBrown.move(-127);
     } else if ((master.get_digital(DIGITAL_UP))){
-      LadyBrown.move_absolute(194.7122, 127);
+      LadyBrown.move_absolute(194.7122*2, 127);
     } else if ((master.get_digital(DIGITAL_DOWN))) {
       LadyBrown.move_absolute(0, 127);
     } else {
