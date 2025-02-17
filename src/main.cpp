@@ -29,9 +29,8 @@ ez::Drive chassis(
 rd::Selector selector({
   {"Auton Red", full_stake},
   {"Auton Blue", full_stake_B},
-  {"Tester", drive_example},
+  {"Auton Skills", skills},
   {"TurnTest", turn_example},
-  {"Auton Skills: WIP", skills},
 });
 
 const int distance_scale = 1;
