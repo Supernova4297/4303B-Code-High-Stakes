@@ -31,6 +31,7 @@ rd::Selector selector({
   {"Auton Blue", full_stake_B},
   {"Auton Skills", skills},
   {"TurnTest", turn_example},
+  {"Drive Test", drive_example},
 });
 
 const int distance_scale = 1;
