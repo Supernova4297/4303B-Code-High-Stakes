@@ -14,13 +14,12 @@ const int SWING_SPEED = 110;
 
 ///
 // Constants
-const int distance_scale = 1;
 ///
 void default_constants() {
   // P, I, D, and Start I
   chassis.pid_drive_constants_set(20.5, 0.0, 100.0);         // Fwd/rev constants, used for odom and non odom motions
   chassis.pid_heading_constants_set(11.0, 0.0, 20.0);        // Holds the robot straight while going forward without odom
-  chassis.pid_turn_constants_set(3.8, 0.05, 20.0, 15.0);     // Turn in place constants
+  chassis.pid_turn_constants_set(4, 0.05, 20.25, 15.0);     // Turn in place constants
   chassis.pid_swing_constants_set(6.0, 0.0, 65.0);           // Swing constants
   chassis.pid_odom_angular_constants_set(6.5, 0.0, 52.5);    // Angular control for odom motions
   chassis.pid_odom_boomerang_constants_set(5.8, 0.0, 32.5);  // Angular control for boomerang motions
@@ -385,7 +384,7 @@ void second_stake(){
 
 ///
 void full_stake() {
-  chassis.pid_drive_set(-36_in,100);
+  chassis.pid_drive_set(-48_in,100);
   chassis.pid_wait();
   Clamp.set_value(1);
   Intake.move(127);
@@ -393,17 +392,16 @@ void full_stake() {
   chassis.pid_drive_set(23_in,100);
   chassis.pid_wait();
   chassis.pid_turn_set(170_deg,100);
-  chassis.pid_drive_set(17.5_in,100);
+  chassis.pid_drive_set(16.5_in,100);
   chassis.pid_wait();
   chassis.pid_turn_set(-90_deg,100);
   chassis.pid_drive_set(26_in,100);
   pros::delay(100);
-  Intake.brake();
 }
 ///chassis.pid_turn_set(45_deg, TURN_SPEED);
 ///
 void full_stake_B() {
-  chassis.pid_drive_set(-36_in,100);
+  chassis.pid_drive_set(-48_in,100);
   chassis.pid_wait();
   Clamp.set_value(1);
   Intake.move(127);
@@ -411,12 +409,11 @@ void full_stake_B() {
   chassis.pid_drive_set(23_in,100);
   chassis.pid_wait();
   chassis.pid_turn_set(-170_deg,100);
-  chassis.pid_drive_set(17.5_in,100);
+  chassis.pid_drive_set(16.5_in,100);
   chassis.pid_wait();
   chassis.pid_turn_set(90_deg,100);
   chassis.pid_drive_set(26_in,100);
   pros::delay(100);
-  Intake.brake();
 }
 
 // Skills Auton
@@ -453,7 +450,7 @@ void skills() {
   Clamp.set_value(0);
   pros::delay(10);
   // 2nd Goal Fill
-  chassis.pid_drive_set(13.8_in, 100);
+/*  chassis.pid_drive_set(13.8_in, 100);
   chassis.pid_wait();
   chassis.pid_turn_set(90_deg, 90);
   chassis.pid_wait();
@@ -552,5 +549,11 @@ void skills() {
   chassis.pid_wait();
   chassis.pid_drive_set(-1.5_in, 100);
   Clamp.set_value(0);
-  pros::delay(10);
+  pros::delay(10);*/
+  chassis.pid_drive_set(14.333_in, 100);
+  LadyBrown.move_absolute(194.7122*2, 127);
+  chassis.pid_wait();
+  chassis.pid_turn_set(0_deg, 90);
+  chassis.pid_wait();
+  chassis.pid_drive_set(48_in, 100);
 }
