@@ -13,4 +13,4 @@ b.right(135) # heading 135
 b.forward(16.97) 
 b.left(288.435) # heading -153.435
 b.back(13.8)
-input("")
+input("Goal One: Complete! ")
