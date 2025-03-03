@@ -14,5 +14,12 @@ b.right(135) # heading 135
 b.forward(16.97) 
 b.left(288.435) # heading -153.435
 b.back(13.8)
-b.stamp()
+b.dot() # Marks the end of the first goal
 input("Goal One: Complete! ")
+b.color("red")
+b.forward(14.333)
+b.right(333.435) # heading 180
+b.forward(48)
+b.left(90)
+b.dot("#FFD700") # Marks Lady Brown Usage
+input("This is the end! ")
