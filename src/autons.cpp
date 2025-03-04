@@ -1,3 +1,4 @@
+#include <sys/_intsup.h>
 #include "main.h" // IWYU pragma: keep
 #include "pros/rtos.hpp"
 #include "subsystems.hpp"
@@ -418,7 +419,7 @@ void full_stake_B() {
 // literally anything
 // Skills Auton
 void skills() {
-  // 1st Goal Fill
+  // Goal 1
   chassis.pid_drive_set(-12_in, 100);
   chassis.pid_wait();
   Clamp.set_value(1);
@@ -550,6 +551,7 @@ void skills() {
   chassis.pid_drive_set(-1.5_in, 100);
   Clamp.set_value(0);
   pros::delay(10);*/
+  // Goal 2
   chassis.pid_drive_set(14.333_in, 100);
   LadyBrown.move_absolute(194.7122*2, 127);
   chassis.pid_wait();
@@ -558,5 +560,133 @@ void skills() {
   chassis.pid_drive_set(48_in, 100);
   chassis.pid_wait();
   chassis.pid_turn_set(90_deg, 100);
+  Intake.brake();
   chassis.pid_wait();
+  Intake.move_absolute(5, 127);
+  pros::delay(10);
+  LadyBrown.move_absolute(194.7122*2, 127);
+  pros::delay(20);
+  chassis.pid_drive_set(-2_in, 127);
+  chassis.pid_wait();
+  chassis.pid_drive_set(2_in, 127);
+  LadyBrown.move_absolute(0, 127);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-123.69_deg, 100);
+  Intake.move(127);
+  chassis.pid_wait();
+  chassis.pid_drive_set(43.2666_in, 100);
+  chassis.pid_wait();
+  Intake.brake();
+  chassis.pid_turn_set(-135_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(33.9411255_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  Intake.move(127);
+  pros::delay(10);
+  chassis.pid_turn_set(-45_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(33.9411255_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-90_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-45_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(16.97_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-161.565_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-14_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+  pros::delay(10);
+
+  // Goal 3
+  chassis.pid_drive_set(13.8_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(108.435_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-37.947332_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  pros::delay(10);
+  chassis.pid_turn_set(97.025_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-90.7471_in, 127);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+  pros::delay(10);
+
+  // Goal 4
+  chassis.pid_turn_set(-45_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(97.5807358_in, 115);
+  chassis.pid_wait();
+  chassis.pid_turn_set(26.56505_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-53.66563_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  pros::delay(10);
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(90_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(0_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_wait();
+  pros::delay(10);
+  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(135_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(16.97056_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(153.435_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(13.8_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+  pros::delay(10);
+
+  // Post 4 corners
+  chassis.pid_drive_set(14.333_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  LadyBrown.move_absolute(194.7122*2, 127);
+  chassis.pid_wait();
+  chassis.pid_drive_set(48_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-90_deg, 100);
+  Intake.brake();
+  chassis.pid_wait();
+  Intake.move_absolute(5, 127);
+  pros::delay(10);
+  LadyBrown.move_absolute(194.7122*2, 127);
+  pros::delay(20);
+  chassis.pid_drive_set(-2_in, 127);
+  chassis.pid_wait();
+  chassis.pid_drive_set(2_in, 127);
+  LadyBrown.move_absolute(0, 127);
+  chassis.pid_wait();
+  chassis.pid_turn_set(33.69007_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(43.2666153_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(135_deg, 100);
+  LadyBrown.move_absolute(1693.3118, 127);
+  chassis.pid_wait();
+  chassis.pid_drive_set(16.97056_in, 127);
 }
