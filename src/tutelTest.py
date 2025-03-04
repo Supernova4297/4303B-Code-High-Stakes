@@ -36,6 +36,17 @@ b.forward(12)
 b.right(135) # heading -45
 b.forward(16.97)
 b.left(296.565) # heading -161.565
-b.back(13.8)
+b.back(14.0)
 b.dot() # End of Goal 2
+
+b.color("#009999")
+b.forward(13.8)
+b.left(90) # heading 108.435
+b.back(37.947332)
+b.left(11.32) # heading 97.025
+b.back(94.7471)
+b.dot()
+
+# last code goes here!
+
 input("This is the end! ")
