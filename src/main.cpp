@@ -1,10 +1,13 @@
 #include "main.h"
+#include "EZ-Template/sdcard.hpp"
 #include "EZ-Template/util.hpp"
 #include "autons.hpp"
 #include "pros/misc.h"
 #include "pros/motors.h"
 #include "pros/rtos.hpp"
 #include "subsystems.hpp"
+
+int auto_stuf = 0;
 
 /////
 // For installation, upgrading, documentations, and tutorials, check out our website!
@@ -133,7 +136,6 @@ void autonomous() {
   chassis.drive_sensor_reset();               // Reset drive sensors to 0
   chassis.odom_xyt_set(0_in, 0_in, 0_deg);    // Set the current position, you can start at a specific position with this
   chassis.drive_brake_set(MOTOR_BRAKE_HOLD);  // Set motors to hold.  This helps autonomous consistency
-
   /*
   Odometry and Pure Pursuit are not magic
 
@@ -259,6 +261,11 @@ void opcontrol() {
   chassis.drive_brake_set(MOTOR_BRAKE_COAST);
 
   while (true) {
+      if (master.get_digital_new_press(DIGITAL_RIGHT)) {
+        selector.next_auton();
+      } else if (master.get_digital_new_press(DIGITAL_LEFT)) {
+        selector.prev_auton();
+      }
     // Gives you some extras to make EZ-Template ezier
     ez_template_extras();
 

@@ -21,4 +21,4 @@ inline pros::Motor LadyBrown(-2);
 pros::Motor LB1 (7, pros::E_MOTOR_GEARSET_18, false, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor LB2 (13, pros::E_MOTOR_GEARSET_18, true, pros::E_MOTOR_ENCODER_DEGREES);*/
 // Motor Group Declaration
-inline pros::v5::MotorGroup Intake({-13, -20});
+inline pros::v5::MotorGroup Intake({13, -20});
