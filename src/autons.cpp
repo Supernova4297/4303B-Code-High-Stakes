@@ -563,8 +563,8 @@ void skills() {
   Intake.brake();
   chassis.pid_wait();
   Intake.move_absolute(5, 127);
-  pros::delay(1000);
-  LadyBrown.move_absolute(194.7122*2, 127);
+  pros::delay(20);
+  LadyBrown.move_absolute(1693.3118, 127);
   pros::delay(20);
   chassis.pid_drive_set(-2_in, 127);
   chassis.pid_wait();
@@ -674,7 +674,7 @@ void skills() {
   chassis.pid_wait();
   Intake.move_absolute(5, 127);
   pros::delay(10);
-  LadyBrown.move_absolute(194.7122*2, 127);
+  LadyBrown.move_absolute(1693.3118, 127);
   pros::delay(20);
   chassis.pid_drive_set(-2_in, 127);
   chassis.pid_wait();
