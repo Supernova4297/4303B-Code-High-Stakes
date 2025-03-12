@@ -455,7 +455,7 @@ void goal_rush() {
 void goal_rush_B() {
   // hi again
 }
-// literally anything
+
 // Skills Auton
 void skills() {
   // Goal 1
