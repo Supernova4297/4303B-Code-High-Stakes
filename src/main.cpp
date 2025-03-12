@@ -34,6 +34,7 @@ ez::Drive chassis(
 rd::Selector selector({
   {"Auton Red", full_stake},
   {"Auton Blue", full_stake_B},
+  {"Auton Red w/ Ally Stake", test_ring_side},
   {"Auton Skills", skills},
   {"TurnTest", turn_example},
   {"Drive Test", drive_example},
@@ -305,9 +306,9 @@ void opcontrol() {
     } else if ((master.get_digital(DIGITAL_L2))&&(LadyBrown.get_position()<1693.3118)){
       LadyBrown.move(127);
     } else if ((master.get_digital(DIGITAL_UP))){
-      LadyBrown.move_absolute(194.7122*2, 127);
+      LadyBrown.move_absolute(194.7122*2, 500);
     } else if ((master.get_digital(DIGITAL_DOWN))) {
-      LadyBrown.move_absolute(0, 127);
+      LadyBrown.move_absolute(0, 500);
     } else {
       LadyBrown.brake();
     } 

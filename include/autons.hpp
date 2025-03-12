@@ -20,3 +20,4 @@ void measure_offsets();
 void full_stake();
 void full_stake_B();
 void skills();
+void test_ring_side();
