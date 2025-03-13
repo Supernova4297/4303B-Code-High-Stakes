@@ -32,10 +32,13 @@ ez::Drive chassis(
 // ez::tracking_wheel horiz_tracker(1, 2.75, 4.0);             // Rotation sensors
 
 rd::Selector selector({
+  {"Red - Ring Side", red_ring_side},
+  {"Blue - Ring Side", blue_ring_side},
+  {"Red - Goal Rush", red_goal_rush},
+  {"Blue - Goal Rush", blue_goal_rush},
+  {"Skills", skills},
   {"Auton Red", full_stake},
   {"Auton Blue", full_stake_B},
-  {"Auton Red w/ Ally Stake", test_ring_side},
-  {"Auton Skills", skills},
   {"TurnTest", turn_example},
   {"Drive Test", drive_example},
 });

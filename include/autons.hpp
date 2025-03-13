@@ -20,4 +20,7 @@ void measure_offsets();
 void full_stake();
 void full_stake_B();
 void skills();
-void test_ring_side();
+void red_ring_side();
+void blue_ring_side();
+void red_goal_rush();
+void blue_goal_rush();

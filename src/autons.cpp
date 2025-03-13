@@ -417,7 +417,7 @@ void full_stake_B() {
   pros::delay(100);
 }
 
-void test_ring_side() {
+void red_ring_side() {
   chassis.pid_drive_set(2_in,100);
   LadyBrown.move_absolute(1693.3118, 500);
   chassis.pid_wait();
@@ -448,12 +448,107 @@ void test_ring_side() {
   LadyBrown.move_absolute(194.7122, 500);
 }
 
-void goal_rush() {
-  // hi
+void blue_ring_side() {
+  chassis.pid_drive_set(2_in,100);
+  LadyBrown.move_absolute(1693.3118, 500);
+  chassis.pid_wait();
+  pros::delay(1000);
+  LadyBrown.move_absolute(0, 500);
+  chassis.pid_drive_set(-15_in,100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-64.158_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-31_in,100);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  Intake.move(127);
+  pros::delay(100);
+  chassis.pid_drive_set(1_in, 100);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-154.1580672368_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(24_in,90);
+  chassis.pid_wait();
+  chassis.pid_turn_set(130.121823769_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(14.5_in, 95);
+  chassis.pid_wait();
+  chassis.pid_turn_set(25.8419327632_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(36_in, 100);
+  LadyBrown.move_absolute(194.7122, 500);
 }
 
-void goal_rush_B() {
-  // hi again
+void red_goal_rush() {
+  chassis.pid_drive_set(-40.5_in, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-10_in, 50);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  pros::delay(1000);
+  Intake.move(127);
+  chassis.pid_drive_set(10_in, 95);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-24_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+  pros::delay(200);
+  chassis.pid_turn_set(-74_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-16_in, 90);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  pros::delay(200);
+  chassis.pid_turn_set(-100_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(30_in, 90);
+  chassis.pid_wait();
+  chassis.pid_turn_set(160_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(23_in, 90);
+  chassis.pid_wait();
+  pros::delay(3000);
+  chassis.pid_drive_set(-24_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+}
+
+void blue_goal_rush() {
+  chassis.pid_drive_set(-40.5_in, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-10_in, 50);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  pros::delay(1000);
+  Intake.move(127);
+  chassis.pid_drive_set(10_in, 95);
+  chassis.pid_wait();
+  chassis.pid_turn_set(180_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-24_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
+  pros::delay(200);
+  chassis.pid_turn_set(74_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-16_in, 90);
+  chassis.pid_wait();
+  Clamp.set_value(1);
+  pros::delay(200);
+  chassis.pid_turn_set(100_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(30_in, 90);
+  chassis.pid_wait();
+  chassis.pid_turn_set(-160_deg, 100);
+  chassis.pid_wait();
+  chassis.pid_drive_set(23_in, 90);
+  chassis.pid_wait();
+  pros::delay(3000);
+  chassis.pid_drive_set(-24_in, 100);
+  chassis.pid_wait();
+  Clamp.set_value(0);
 }
 
 // Skills Auton
