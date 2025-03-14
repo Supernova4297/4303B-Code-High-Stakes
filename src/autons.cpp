@@ -688,7 +688,7 @@ void skills() {
   Clamp.set_value(0);
   pros::delay(10);*/
   // Goal 2
-  chassis.pid_drive_set(8.833_in, 100);
+  chassis.pid_drive_set(9.033_in, 100);
   LadyBrown.move_absolute(194.7122*2, 500);
   chassis.pid_wait();
   chassis.pid_turn_set(180_deg, 90);
@@ -730,7 +730,7 @@ void skills() {
   chassis.pid_wait();
   chassis.pid_turn_set(180_deg, 100);
   chassis.pid_wait();
-  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_drive_set(26_in, 100);
   chassis.pid_wait();
   pros::delay(10);
   chassis.pid_drive_set(12_in, 88);
@@ -755,7 +755,7 @@ void skills() {
   chassis.pid_wait();
   Clamp.set_value(1);
   pros::delay(10);
-  chassis.pid_turn_set(97.025_deg, 100);
+  chassis.pid_turn_set(-82.975_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(-90.7471_in, 127);
   chassis.pid_wait();
@@ -810,7 +810,7 @@ void skills() {
   chassis.pid_turn_set(-90_deg, 100);
   Intake.brake();
   chassis.pid_wait();
-  Intake.move_absolute(5, 127);
+  Intake.move_relative(-75, 127);
   pros::delay(10);
   LadyBrown.move_absolute(1693.3118, 500);
   pros::delay(100);
