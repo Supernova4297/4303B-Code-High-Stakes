@@ -480,12 +480,13 @@ void blue_ring_side() {
 }
 
 void red_goal_rush() {
-  chassis.pid_drive_set(-40.5_in, 100);
+  chassis.pid_drive_set(-40.5_in, 127);
   chassis.pid_wait();
-  chassis.pid_drive_set(-10_in, 50);
+  chassis.pid_drive_set(-10_in, 70);
   chassis.pid_wait();
+  pros::delay(50);
   Clamp.set_value(1);
-  pros::delay(1000);
+  pros::delay(100);
   Intake.move(127);
   chassis.pid_drive_set(10_in, 95);
   chassis.pid_wait();
@@ -516,12 +517,13 @@ void red_goal_rush() {
 }
 
 void blue_goal_rush() {
-  chassis.pid_drive_set(-40.5_in, 100);
+  chassis.pid_drive_set(-40.5_in, 127);
   chassis.pid_wait();
-  chassis.pid_drive_set(-10_in, 50);
+  chassis.pid_drive_set(-10_in, 70);
   chassis.pid_wait();
+  pros::delay(50);
   Clamp.set_value(1);
-  pros::delay(1000);
+  pros::delay(100);
   Intake.move(127);
   chassis.pid_drive_set(10_in, 95);
   chassis.pid_wait();
@@ -554,33 +556,33 @@ void blue_goal_rush() {
 // Skills Auton
 void skills() {
   // Goal 1
-  chassis.pid_drive_set(-12_in, 100);
+  chassis.pid_drive_set(-15_in, 100);
   chassis.pid_wait();
   Clamp.set_value(1);
   Intake.move(127);
   pros::delay(10);
-  chassis.pid_turn_set(180_deg, 90);
+  chassis.pid_turn_set(180_deg, 70);
   chassis.pid_wait();
-  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_drive_set(25_in, 80);
   chassis.pid_wait();
-  chassis.pid_turn_set(90_deg, 90);
+  chassis.pid_turn_set(90_deg, 80);
   chassis.pid_wait();
-  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_drive_set(24_in, 80);
   chassis.pid_wait();
-  chassis.pid_turn_set(0_deg, 90);
+  chassis.pid_turn_set(0_deg, 80);
   chassis.pid_wait();
-  chassis.pid_drive_set(24_in, 100);
+  chassis.pid_drive_set(24_in, 80);
   chassis.pid_wait();
   pros::delay(10);
-  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_drive_set(12_in, 78);
   chassis.pid_wait();
-  chassis.pid_turn_set(135_deg, 90);
+  chassis.pid_turn_set(135_deg, 80);
   chassis.pid_wait();
-  chassis.pid_drive_set(16.97_in, 100);
+  chassis.pid_drive_set(16.97_in, 78);
   chassis.pid_wait();
-  chassis.pid_turn_set(-153.435_deg, 90);
+  chassis.pid_turn_set(-153.435_deg, 80);
   chassis.pid_wait();
-  chassis.pid_drive_set(-26.8_in, 100);
+  chassis.pid_drive_set(-26.8_in, 80);
   chassis.pid_wait();
   Clamp.set_value(0);
   pros::delay(10);
@@ -686,7 +688,7 @@ void skills() {
   Clamp.set_value(0);
   pros::delay(10);*/
   // Goal 2
-  chassis.pid_drive_set(14.333_in, 100);
+  chassis.pid_drive_set(8.833_in, 100);
   LadyBrown.move_absolute(194.7122*2, 500);
   chassis.pid_wait();
   chassis.pid_turn_set(180_deg, 90);
@@ -694,12 +696,12 @@ void skills() {
   chassis.pid_drive_set(48_in, 100);
   chassis.pid_wait();
   chassis.pid_turn_set(90_deg, 100);
-  Intake.brake();
   chassis.pid_wait();
-  Intake.move_absolute(5, 127);
+  Intake.brake();
+  Intake.move_relative(-75, 127);
   pros::delay(20);
   LadyBrown.move_absolute(1693.3118, 500);
-  pros::delay(20);
+  pros::delay(1000);
   chassis.pid_drive_set(-2_in, 127);
   chassis.pid_wait();
   chassis.pid_drive_set(2_in, 127);
@@ -711,9 +713,9 @@ void skills() {
   chassis.pid_drive_set(43.2666_in, 100);
   chassis.pid_wait();
   Intake.brake();
-  chassis.pid_turn_set(-135_deg, 100);
+  chassis.pid_turn_set(45_deg, 100);
   chassis.pid_wait();
-  chassis.pid_drive_set(33.9411255_in, 100);
+  chassis.pid_drive_set(-33.9411255_in, 100);
   chassis.pid_wait();
   Clamp.set_value(1);
   Intake.move(127);
@@ -729,13 +731,15 @@ void skills() {
   chassis.pid_turn_set(180_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(24_in, 100);
-  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_wait();
+  pros::delay(10);
+  chassis.pid_drive_set(12_in, 88);
   chassis.pid_wait();
   chassis.pid_turn_set(-45_deg, 100);
   chassis.pid_wait();
-  chassis.pid_drive_set(16.97_in, 100);
+  chassis.pid_drive_set(16.97_in, 88);
   chassis.pid_wait();
-  chassis.pid_turn_set(-161.565_deg, 100);
+  chassis.pid_turn_set(18.435_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(-14_in, 100);
   chassis.pid_wait();
@@ -743,9 +747,9 @@ void skills() {
   pros::delay(10);
 
   // Goal 3
-  chassis.pid_drive_set(13.8_in, 100);
+  chassis.pid_drive_set(7.8_in, 100);
   chassis.pid_wait();
-  chassis.pid_turn_set(108.435_deg, 100);
+  chassis.pid_turn_set(-71.565_deg, 100);
   chassis.pid_wait();
   chassis.pid_drive_set(-37.947332_in, 100);
   chassis.pid_wait();
@@ -782,11 +786,11 @@ void skills() {
   chassis.pid_drive_set(24_in, 100);
   chassis.pid_wait();
   pros::delay(10);
-  chassis.pid_drive_set(12_in, 100);
+  chassis.pid_drive_set(12_in, 88);
   chassis.pid_wait();
   chassis.pid_turn_set(135_deg, 100);
   chassis.pid_wait();
-  chassis.pid_drive_set(16.97056_in, 100);
+  chassis.pid_drive_set(16.97056_in, 88);
   chassis.pid_wait();
   chassis.pid_turn_set(153.435_deg, 100);
   chassis.pid_wait();
@@ -809,7 +813,7 @@ void skills() {
   Intake.move_absolute(5, 127);
   pros::delay(10);
   LadyBrown.move_absolute(1693.3118, 500);
-  pros::delay(20);
+  pros::delay(100);
   chassis.pid_drive_set(-2_in, 127);
   chassis.pid_wait();
   chassis.pid_drive_set(2_in, 127);
