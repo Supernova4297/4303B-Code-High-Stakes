@@ -24,3 +24,4 @@ void red_ring_side();
 void blue_ring_side();
 void red_goal_rush();
 void blue_goal_rush();
+void forward_auto();
